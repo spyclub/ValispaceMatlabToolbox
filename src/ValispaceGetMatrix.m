@@ -2,8 +2,7 @@ function [ Matrix, MatrixNames, MatrixValiIDs ] = ValispaceGetMatrix(name_or_id)
 % ValispaceGetMatrix() returns a Matlab Matrix with the values, one with
 % the names and one with the ValiIDs
     global ValispaceLogin
-    global ValiList
-    
+        
     if (isempty(ValispaceLogin)) 
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
