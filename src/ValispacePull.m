@@ -5,7 +5,7 @@ function [ ValiList ] = ValispacePull()
     global ValiMatrixList;
     
     if (length(ValispaceLogin)==0)
-        error('You first have to run ValispaceInit()');
+        error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
     
     options = ValispaceLogin.options;

@@ -3,7 +3,7 @@ function [ out_data ] = ValispacePost(url, data)
     global ValispaceLogin
 
     if (length(ValispaceLogin) == 0)
-        error('You first have to run ValispaceInit()');
+        error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 
     options = ValispaceLogin.options;

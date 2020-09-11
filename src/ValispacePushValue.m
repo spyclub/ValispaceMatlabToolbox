@@ -31,7 +31,7 @@ function [ ExecutionStatus ] = ValispacePushValue(name_or_id, value)
     global ValispaceLogin
 
     if (isempty(ValispaceLogin))
-        error('You first have to run ValispaceInit()');
+        error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 
     % use name instead of ID
