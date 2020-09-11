@@ -15,12 +15,18 @@ function [ Matrix, MatrixNames, MatrixValiIDs ] = ValispaceGetMatrix(name_or_id)
 
     url = strcat(ValispaceLogin.url, 'matrices/', num2str(name_or_id), '/');
     MatrixData = webread(url, ValispaceLogin.options);
-  
-    Matrix = [];
-    MatrixNames = string([]); % create empty string array
     
-    for column = 1:MatrixData.number_of_columns
-       for row = 1:MatrixData.number_of_rows
+    rows = MatrixData.number_of_rows;
+    columns = MatrixData.number_of_columns;
+    
+    Matrix = zeros(rows, columns);
+    MatrixValiIDs = zeros(rows, columns);
+    
+    % create empty string array
+    MatrixNames = string([]);
+    
+    for column = 1:columns
+       for row = 1:rows
            Vali = ValispaceGetVali(MatrixData.cells(row,column));
            Matrix(row,column) = Vali.value;
            MatrixNames(row,column) = Vali.name;
