@@ -10,7 +10,7 @@ function [ id, Vali ] = ValispaceName2Id(name)
     end
       
     for vali = ValiList
-        if (strcmp(lower(vali.name), lower(name)) == 1)
+        if (strcmpi(vali.name, name) == 1)
             Vali = vali;
             id = vali.id;
         end
@@ -18,7 +18,7 @@ function [ id, Vali ] = ValispaceName2Id(name)
     
     if (id == 0)
         for matri = ValiMatrixList
-            if (strcmp(lower(matri.unique_name), lower(name)) == 1)
+            if (strcmpi(matri.unique_name, name) == 1)
                 Vali = matri;
                 id = matri.id;
             end
