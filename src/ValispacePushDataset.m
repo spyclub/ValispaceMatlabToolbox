@@ -26,7 +26,9 @@ function [ ExecutionStatus ] = ValispacePushDataset(name_or_id, dataset)
     end
     post_data.data = data;
     ReturnVali = webwrite(url,post_data,write_options);
-    display('Successfully updated Dataset!');
 
-    %display(strcat('Successfully pushed ', ReturnVali.name, ' = ', string(ReturnVali.value), ' ', ReturnVali.unit, ' to Valispace.'));
+    fprintf('VALISPACE: Successfully pushed %s = %s %s to Valispace.\n', ...
+        ReturnVali.name, ...
+        string(ReturnVali.value), ...
+        ReturnVali.unit);
 end
