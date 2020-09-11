@@ -6,7 +6,7 @@ function [ out_data ] = ValispacePut(url, data)
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 
-    if isempty(strfind(url, 'http'))
+    if ~contains(url, 'http')
         url = strcat(ValispaceLogin.url, url);
     end
 
