@@ -5,7 +5,7 @@ function [ id, Vali ] = ValispaceName2Id(name)
     id = 0;
     Vali = [];
     
-    if (length(ValiList)==0)
+    if (isempty(ValiList))
         error('VALISPACE-ERROR: If you use this function with a string (Vali-Name), you first need to call ValispacePull().'); 
     end
       

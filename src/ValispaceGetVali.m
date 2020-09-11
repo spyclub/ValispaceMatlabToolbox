@@ -4,15 +4,15 @@ function [ Vali ] = ValispaceGetVali(name_or_id)
     global ValiList
     id = 0;
     
-    if (length(ValispaceLogin)==0) 
+    if (isempty(ValispaceLogin)) 
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
     
-    if ((length(ValiList)==0) && (isa(name_or_id, 'string') || isa(name_or_id, 'char')))
+    if ((isempty(ValiList)) && (isa(name_or_id, 'string') || isa(name_or_id, 'char')))
         error('VALISPACE-ERROR: If you use this function with a string (Vali-Name), you first need to call ValispacePull().'); 
     end
     
-    if (length(ValiList)==0) % ValispacePull() has not been called and therefore the API is accessed directly
+    if (isempty(ValiList)) % ValispacePull() has not been called and therefore the API is accessed directly
         id = name_or_id;
         url = strcat(ValispaceLogin.url, 'valis/', num2str(id), '/');
         Vali = webread(url, ValispaceLogin.options);

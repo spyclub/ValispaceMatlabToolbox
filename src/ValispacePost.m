@@ -2,7 +2,7 @@ function [ out_data ] = ValispacePost(url, data)
 % Custom POST request to the Valispace REST API
     global ValispaceLogin
 
-    if (length(ValispaceLogin) == 0)
+    if (isempty(ValispaceLogin))
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 

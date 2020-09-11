@@ -2,7 +2,7 @@ function ValispacePushMatrix(name_or_id,Matrix)
 % ValispacePushMatrix() pushes a Matlab Matrix with the values
     global ValispaceLogin
 
-    if (length(ValispaceLogin)==0) 
+    if (isempty(ValispaceLogin)) 
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
   

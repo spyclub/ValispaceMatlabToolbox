@@ -2,7 +2,7 @@ function [ out_data ] = ValispacePut(url, data)
 % Custom POST request to the Valispace REST API
     global ValispaceLogin
 
-    if (length(ValispaceLogin) == 0)
+    if (isempty(ValispaceLogin))
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 
@@ -19,10 +19,9 @@ function [ out_data ] = ValispacePut(url, data)
         end
 
         r = regexp(url, '^(.*/)(\d+)/?$', 'tokens');
-        if length(r) ~= 0
+        if ~isempty(r)
             url = r{1}{1};
             get_data.('id') = str2num(r{1}{2});
-            %data.('id') = str2num(r{1}{2});
         end
 
         out_data = ValispacePost(url, get_data);

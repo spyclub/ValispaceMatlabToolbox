@@ -4,7 +4,7 @@ function [ ExecutionStatus ] = ValispacePushDataset(name_or_id, dataset)
 
     global ValispaceLogin
 
-    if (length(ValispaceLogin)==0)
+    if (isempty(ValispaceLogin))
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
 

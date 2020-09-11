@@ -32,5 +32,4 @@ function ValispaceInit(URL,Username,Password,insecure)
     ValispaceLogin.url = strcat(BasicUrl, '/rest/'); 
 
     fprintf('VALISPACE: You have been successfully connected to the %s API.\n', ValispaceLogin.url);
- 
 end

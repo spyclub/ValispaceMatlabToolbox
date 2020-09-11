@@ -4,7 +4,7 @@ function [ Matrix, MatrixNames, MatrixValiIDs ] = ValispaceGetMatrix(name_or_id)
     global ValispaceLogin
     global ValiList
     
-    if (length(ValispaceLogin)==0) 
+    if (isempty(ValispaceLogin)) 
         error('VALISPACE-ERROR: You first have to run ValispaceInit()');
     end
     
